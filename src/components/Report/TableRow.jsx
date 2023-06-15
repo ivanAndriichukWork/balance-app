@@ -1,8 +1,8 @@
-import { useState } from 'react'
 import styled, { css } from 'styled-components'
 import { MAIN_ROWS } from '../../helpers/constants'
 import { getReportStore, useReportStore } from '../../store/report'
 import { DropCell } from './DropCell'
+import { formatAmountInDollars } from '../../helpers/utils'
 
 const Tr = styled.tr``
 
@@ -87,7 +87,7 @@ export const TableRow = ({
           if (typeof value !== 'object') {
             return (
               <MainTd key={index} {...{ [`data-${item.key}`]: key, color }}>
-                {value}
+                {key === 'name' ? value : formatAmountInDollars(value)}
               </MainTd>
             )
           }

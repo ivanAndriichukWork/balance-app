@@ -1,12 +1,14 @@
 import { useEffect } from 'react'
 import { useDrag } from 'react-dnd'
 import styled from 'styled-components'
+import { formatAmountInDollars } from '../../helpers/utils'
 import { getReportStore, useReportStore } from '../../store/report'
 
 const SidebarContainer = styled.div``
 const Flex = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 8px;
 `
 const Close = styled.button`
@@ -36,12 +38,13 @@ const Name = styled.p`
 `
 const Price = styled.p`
   font-weight: bold;
+  margin-left: 20px;
 `
 
 export const Content = ({ currentCell, setIsOpen, handleDragEnd }) => {
   const { fetchTransactions, transactions } = useReportStore(getReportStore)
 
-  const { category, month } = currentCell
+  const { category, month, value } = currentCell
 
   useEffect(() => {
     if (!!currentCell.month) {
@@ -57,7 +60,11 @@ export const Content = ({ currentCell, setIsOpen, handleDragEnd }) => {
         <Close onClick={() => setIsOpen(false)}>X</Close>
       </Flex>
 
-      <p>{month}</p>
+      <Flex>
+        <span>{month}</span>
+        <span>${value}</span>
+      </Flex>
+
       <p>{transactions.length} Transactions</p>
       {transactions.map((item) => (
         <TransactionCard key={item.uuid} {...{ item, handleDragEnd }} />
@@ -88,7 +95,7 @@ const TransactionCard = ({ item, handleDragEnd }) => {
       <Date>{item.date}</Date>
       <Flex>
         <Name>{item.source}</Name>
-        <Price>{item.price}</Price>
+        <Price>{formatAmountInDollars(item.price, true)}</Price>
       </Flex>
     </Transaction>
   )

@@ -1,5 +1,6 @@
 import { useDrop } from 'react-dnd'
 import styled from 'styled-components'
+import { formatAmountInDollars } from '../../helpers/utils'
 
 const ClickableTd = styled.td`
   border: 1px solid #e0e0e0;
@@ -39,7 +40,7 @@ export const DropCell = ({ onDrop, details }) => {
         [`data-y`]: month,
       }}
     >
-      {value}
+      {formatAmountInDollars(value)}
     </ClickableTd>
   )
 }
