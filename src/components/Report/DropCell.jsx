@@ -24,7 +24,7 @@ export const DropCell = ({ onDrop, details }) => {
   const isActive = canDrop && isOver
   let backgroundColor = '#ffffff'
   if (isActive) {
-    backgroundColor = '#211ed2'
+    backgroundColor = '#f6cb97'
   } else if (canDrop) {
     backgroundColor = '#fafddc'
   }
