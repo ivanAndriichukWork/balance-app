@@ -16,7 +16,8 @@ In the project directory:
 ## Notes
 
 - TODO make UI more nice
-- Modal window with transactions: I wrote a small randomizer to make it “more fun” to develop, as it takes a very long time to mock such an amount of data.
+- About modal window with transactions:
+  by design, we make a new request each time when user click on cell. So I wrote a small randomizer to make it “more fun” to develop, as it takes a very long time to mock such an amount of data.
 
 ## API
 
