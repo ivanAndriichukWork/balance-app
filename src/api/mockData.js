@@ -94,13 +94,13 @@ const MOCK_COGS = {
       uuid: uuidv4(),
       date: '10-05-2023',
       total: 200,
-      name: 'First Republic Savings',
+      name: 'COGS 3',
     },
     {
       uuid: uuidv4(),
       date: '15-05-2023',
       total: 100,
-      name: 'Chase Checking',
+      name: 'COGS 4',
     },
   ],
   '04-2023': [
@@ -108,13 +108,13 @@ const MOCK_COGS = {
       uuid: uuidv4(),
       date: '10-04-2023',
       total: 160,
-      name: 'First Republic Savings',
+      name: 'COGS 3',
     },
     {
       uuid: uuidv4(),
       date: '15-04-2023',
       total: 240,
-      name: 'Chase Checking',
+      name: 'COGS 4',
     },
   ],
 }
@@ -123,36 +123,36 @@ const MOCK_EXPENSES = {
     {
       uuid: uuidv4(),
       total: -1500,
-      name: 'First Republic Savings',
+      name: 'Expense 1',
     },
     {
       uuid: uuidv4(),
       total: -1700,
-      name: 'Chase Checking',
+      name: 'Expense 2',
     },
   ],
   '05-2023': [
     {
       uuid: uuidv4(),
       total: -1200,
-      name: 'First Republic Savings',
+      name: 'Expense 1',
     },
     {
       uuid: uuidv4(),
       total: -1570,
-      name: 'Chase Checking',
+      name: 'Expense 2',
     },
   ],
   '06-2023': [
     {
       uuid: uuidv4(),
       total: -1240,
-      name: 'First Republic Savings',
+      name: 'Expense 1',
     },
     {
       uuid: uuidv4(),
       total: -1670,
-      name: 'Chase Checking',
+      name: 'Expense 2',
     },
   ],
 }
