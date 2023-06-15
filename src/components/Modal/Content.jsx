@@ -16,6 +16,11 @@ const Close = styled.button`
   border-radius: 50%;
   height: 30px;
   width: 30px;
+  &:hover {
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px gray;
+    font-weight: bold;
+  }
 `
 const Title = styled.h3`
   font-size: 20px;
