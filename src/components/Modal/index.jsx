@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
 import { ReportTable } from '../Report/Table'
 import { Content } from './Content'
@@ -17,7 +17,7 @@ const Sidebar = styled.div`
   ${(props) =>
     props.isOpen &&
     css`
-      width: 300px;
+      width: 20%;
       display: block;
     `};
 `
