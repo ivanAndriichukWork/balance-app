@@ -32,6 +32,7 @@ export const Modal = () => {
   const [currentCell, setCurrentCell] = useState({
     category: null,
     month: null,
+    value: null,
   })
   const [source, setSource] = useState(null)
   const [transaction, setTransaction] = useState(null)
@@ -58,9 +59,9 @@ export const Modal = () => {
     }
   }, [source, transaction])
 
-  const toggleModal = ({ category, month }) => {
+  const toggleModal = ({ category, month, value }) => {
     setIsOpen(true)
-    setCurrentCell({ category, month })
+    setCurrentCell({ category, month, value })
   }
 
   const handleDrop = (targetCell) => {

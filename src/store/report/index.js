@@ -42,8 +42,8 @@ export const useReportStore = create((set, get) => ({
     })
     set({ banksRows: banksRowsWithChildren })
   },
-  fetchTransactions: async ({ category, month }) => {
-    const { data } = await getTransactions({ category, month })
+  fetchTransactions: async ({ category, month, value }) => {
+    const { data } = await getTransactions({ category, month, value })
     set({ transactions: data.items })
   },
 }))

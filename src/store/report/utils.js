@@ -47,7 +47,7 @@ const addNewRows = (dataRows, data) => {
   for (let i = 0; i < dataByMonths.length; i++) {
     asb[dataByMonths[i][0]] = dataByMonths[i][1]
     gross[dataByMonths[i][0]] = incomesByMonths[i][1] - cogsByMonths[i][1]
-    net[dataByMonths[i][0]] = gross[dataByMonths[i][0]] - expensesByMonths[i][1]
+    net[dataByMonths[i][0]] = gross[dataByMonths[i][0]] + expensesByMonths[i][1]
   }
 
   return [...dataRows, asb, gross, net]

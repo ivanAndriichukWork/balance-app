@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import { useState } from 'react'
+import styled, { css } from 'styled-components'
 import { MAIN_ROWS } from '../../helpers/constants'
 import { getReportStore, useReportStore } from '../../store/report'
 import { DropCell } from './DropCell'
@@ -8,20 +9,19 @@ const Tr = styled.tr``
 const MainTr = styled(Tr)`
   cursor: pointer;
 
-  ${({ color, isMainRow }) => `
+  ${({ color, isMainRow }) => css`
     & {
-      background: ${color}
+      background: ${color};
     }
     &:hover {
       background-color: ${!isMainRow && '#e8e6db'};
     }
-    `};
+  `};
 `
 
 const Td = styled.td`
   border: 1px solid #e0e0e0;
   padding: 18px 28px 18px;
-  text-align: center;
 `
 
 const NameTd = styled(Td)`
@@ -63,7 +63,11 @@ export const TableRow = ({
 
     // TODO set cell in different color
     // open Modal for selected
-    toggleModal({ category: dataset[0][1], month: dataset[1][1] })
+    toggleModal({
+      category: dataset[0][1],
+      month: dataset[1][1],
+      value: target.textContent,
+    })
   }
 
   const isMainRow = MAIN_ROWS.includes(item.name)
